@@ -30,7 +30,7 @@ router.get('/toggle/:id', async(req, res) => {
     res.redirect('/');
 });
 
-// Edit task
+// Show Edit Form 
 router.get('/edit/:id', async (req, res) => {
     console.log("Request params: ", req.params)
     console.log("Edit request received for task #", req.params.id)
@@ -39,6 +39,20 @@ router.get('/edit/:id', async (req, res) => {
     res.render('edit', {
         task: task
     });
+});
+
+// Update task
+router.post('/update/:id', async (req, res) => {
+    console.log("Request params: ", req.params)
+    console.log("Edit request received for task #", req.params.id)
+    const { id } = req.params;
+    let task = await Task.findById(id);
+    task.title = req.body.title;
+    task.description = req.body.description;
+    console.log("Task: ", task);
+    await task.save();
+    console.log('Successfully updated task :)');
+    res.redirect('/');
 });
 
 // Delete tasks

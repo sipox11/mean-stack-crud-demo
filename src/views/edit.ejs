@@ -1,0 +1,9 @@
+<% include partials/_header %>
+<% include partials/_nav %>
+
+<%- include("partials/_form", { 
+    formTitle: "Create new task", 
+    task: task,
+    formAction: `/update/${task._id}`, 
+    formSubmitText: 'Update' 
+}) %>
