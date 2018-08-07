@@ -1,7 +1,17 @@
 const path = require('path');
-const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+const express = require('express');
+
 const app = express();
+
+// DB Connection
+mongoose.connect('mongodb://localhost/crud-mongo')
+    .then(db => {
+        console.log("DB Connected successfully! :)");
+    }).catch(error => {
+        console.log("Error while connecting to DB.")
+    });
 
 // Importing routes
 const indexRoutes = require('./routes/index');
