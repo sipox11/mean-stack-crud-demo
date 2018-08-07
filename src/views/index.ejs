@@ -1,0 +1,47 @@
+<!-- Header -->
+<% include partials/_header %>
+<!-- Navigation -->
+<% include partials/_nav %>
+
+<!-- Main -->
+
+    <div class="container">
+        <div class="row">
+            <!-- Form -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="Enter title" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" cols="80" class="form-control"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Add task
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- List data table -->
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Operation</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<% include partials/_footer %>
+
+ 
