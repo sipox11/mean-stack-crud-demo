@@ -1,9 +1,15 @@
 <% include partials/_header %>
 <% include partials/_nav %>
-
-<%- include("partials/_form", { 
-    formTitle: "Create new task", 
-    task: task,
-    formAction: `/update/${task._id}`, 
-    formSubmitText: 'Update' 
-}) %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <%- include("partials/_form", { 
+                formTitle: "Edit task", 
+                task: task,
+                formAction: `/update/${task._id}`, 
+                formSubmitText: 'Update' 
+            }) %>
+        </div>
+        
+    </div>
+</div>

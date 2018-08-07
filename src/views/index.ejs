@@ -6,12 +6,14 @@
 <!-- Main -->
     <div class="container">
         <div class="row">
-            <%- include("partials/_form", { 
-                formTitle: "Create new task", 
-                task: null,
-                formAction: '/add', 
-                formSubmitText: 'Add' 
-            }) %>
+            <div class="col-md-5">
+                <%- include("partials/_form", { 
+                    formTitle: "Create new task", 
+                    task: null,
+                    formAction: '/add', 
+                    formSubmitText: 'Add' 
+                }) %>
+            </div>
             <!-- List data table -->
             <div class="col-md-7">
                 <table class="table table-bordered table-hover">
