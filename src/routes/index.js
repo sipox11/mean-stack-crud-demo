@@ -19,4 +19,35 @@ router.post('/add', async (req, res) => {
     res.redirect('/');
 });
 
+// Toggle task
+router.get('/toggle/:id', async(req, res) => {
+    console.log("Request params: ", req.params)
+    console.log("Toggle request received for task #", req.params.id)
+    const { id } = req.params;
+    const task = await Task.findById(id);
+    task.status = !task.status;
+    await task.save();
+    res.redirect('/');
+});
+
+// Edit task
+router.get('/edit/:id', async (req, res) => {
+    console.log("Request params: ", req.params)
+    console.log("Edit request received for task #", req.params.id)
+    const { id } = req.params;
+    const task = await Task.findById(id);
+    res.render('edit', {
+        task: task
+    });
+});
+
+// Delete tasks
+router.get('/delete/:id', async (req, res) => {
+    console.log("Request params: ", req.params)
+    console.log("Delete request received for task #", req.params.id)
+    await Task.remove({_id: req.params.id});
+    console.log("Successfully deleted :)")
+    res.redirect('/');
+});
+
 module.exports = router;
