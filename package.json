@@ -1,5 +1,5 @@
 {
-  "name": "CRUD-Mongo-Express-Node",
+  "name": "crud-mongo-express-node",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
 }
